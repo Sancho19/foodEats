@@ -50,11 +50,11 @@ export default function HomePage() {
   return (
     <div className="bg-black min-h-screen text-white font-sans">
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center text-center p-12 bg-gradient-to-b from-orange-400/30 via-orange-400/60 to-black text-black">
+      <section className="relative flex flex-col items-center justify-center text-center p-12 bg-gradient-to-b from-orange-400/50 to-black text-black">
         <h1 className="text-6xl font-extrabold drop-shadow-lg text-white tracking-wide mb-4">
           ZaiEats
         </h1>
-        <h2 className="text-2xl font-extrabold drop-shadow-lg mb-4">
+        <h2 className="text-lg text-neutral-400 font-extrabold drop-shadow-lg mb-4">
           Fast, Fresh, Local – Delivered to You!
         </h2>
         <div className="flex mt-6 space-x-4">

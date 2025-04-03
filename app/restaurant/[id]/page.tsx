@@ -176,12 +176,15 @@ export default function RestaurantPage() {
           />
         </div>
         {/* Text over the Image */}
-        <div className="absolute inset-50 bg-opacity-50 z-20 flex flex-col justify-center items-center px-4">
+        <div className="absolute inset-0 bg-opacity-50 z-20 flex flex-col justify-center items-center px-0">
+          {/* Restaurant Name */}
           <h1 className="text-4xl md:text-5xl font-bold text-yellow-500 text-center tracking-wider">
             {restaurant.name}
           </h1>
-          <div className="flex items-center mt-2">
-            <FaStar className="text-yellow-500 mr-2" />
+
+          {/* Restaurant Rating - INLINE */}
+          <div className="flex items-center mt-2 space-x-1">
+            <FaStar className="text-yellow-500" />
             <span className="text-lg font-semibold">
               {restaurant.rating} Stars
             </span>
