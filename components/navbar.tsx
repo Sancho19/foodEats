@@ -8,7 +8,7 @@ import { ShoppingCart } from "lucide-react";
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
-  const [cartItems, setCartItems] = useState([
+  const [cartItems] = useState([
     { id: 1, name: "Burger", price: 50, quantity: 2 },
   ]);
 
