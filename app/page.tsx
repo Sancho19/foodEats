@@ -76,7 +76,7 @@ export default function HomePage() {
       </section>
       <section className="w-full flex justify-center px-4 md:px-0">
         <div className="p-1 bg-black w-full max-w-4xl rounded-lg shadow-lg">
-          <h2 className="text-xl font-semibold mb-6 text-center">
+          <h2 className="text-2xl font-semibold mb-6 text-center">
             Exclusive Deals
           </h2>
 
@@ -90,7 +90,7 @@ export default function HomePage() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="relative w-full h-[230px] sm:h-[200px] md:h-[360px]">
+              <div className="relative w-full h-[200px] sm:h-[200px] md:h-[360px]">
                 <Image
                   src={deals[currentIndex].image}
                   alt={deals[currentIndex].title}
@@ -120,11 +120,11 @@ export default function HomePage() {
         </div>
       </section>
       {/* Restaurants Section */}
-      <section className="p-4 bg-black">
-        <h2 className="text-3xl font-bold mb-12 text-center">
+      <section className="p-1 bg-black">
+        <h2 className="text-2xl font-bold mb-6 mt-12 text-center">
           Top Restaurants
         </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 px-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 px-4 mb-10">
           {[
             { id: 1, name: "Zai", image: "/food1.jpg", rating: 4.8 },
             { id: 2, name: "Bean Bag", image: "/food2.jpg", rating: 4.7 },

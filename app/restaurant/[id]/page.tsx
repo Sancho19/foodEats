@@ -37,78 +37,75 @@ const restaurants: Restaurant[] = [
         price: "R50",
         description:
           "2 Chicken Breasts, lettuce, a slice of cheese, middle bun, 3 pickles and Dreamy Creamy sauce on a toasted sesame bun. Includes a regular Soul Fries and a 300ml cold drink",
-        image: "/food3.jpg",
+        image: "/deal2.jpg",
       },
       {
         id: "102",
-        name: "Chicken Wrap",
-        price: "R70",
+        name: "English Breakfast",
+        price: "R45",
         description:
-          "2 Chicken Breasts, lettuce, a slice of cheese, middle bun, 3 pickles and Dreamy Creamy sauce on a toasted sesame bun. Includes a regular Soul Fries and a 300ml cold drink",
-        image: "/waffle.jpg",
+          "2 eggs any style, streaky bacon, mushrooms, tomato and toast",
+        image: "/english.jpg",
       },
       {
         id: "103",
-        name: "Cheese Burger",
-        price: "R50",
-        description:
-          "2 Chicken Breasts, lettuce, a slice of cheese, middle bun, 3 pickles and Dreamy Creamy sauce on a toasted sesame bun. Includes a regular Soul Fries and a 300ml cold drink",
-        image: "/food3.jpg",
+        name: "Muesli",
+        price: "R45",
+        description: "Served with plain yoghurt",
+        image: "/muesli.jpg",
       },
       {
         id: "104",
-        name: "Chicken Wrap",
-        price: "R70",
+        name: "SHAKSHOUKA",
+        price: "R105",
         description:
-          "2 Chicken Breasts, lettuce, a slice of cheese, middle bun, 3 pickles and Dreamy Creamy sauce on a toasted sesame bun. Includes a regular Soul Fries and a 300ml cold drink",
+          "2 poached eggs in a spicy tomato sauce, beef strips, Mozzarella Cheese on Garlic & Herb ciabatta.",
         image: "/waffle.jpg",
       },
       {
         id: "105",
-        name: "Cheese Burger",
-        price: "R50",
+        name: "Zai Benedict",
+        price: "R75",
         description:
-          "2 Chicken Breasts, lettuce, a slice of cheese, middle bun, 3 pickles and Dreamy Creamy sauce on a toasted sesame bun. Includes a regular Soul Fries and a 300ml cold drink",
+          "Two poached eggs on English muffin with bacon, topped with Spicy Hollandaise sauce and rocket",
         image: "/food3.jpg",
       },
       {
         id: "106",
-        name: "Chicken Wrap",
-        price: "R70",
+        name: "Fresh Fruit Salad",
+        price: "R45",
         description:
-          "2 Chicken Breasts, lettuce, a slice of cheese, middle bun, 3 pickles and Dreamy Creamy sauce on a toasted sesame bun. Includes a regular Soul Fries and a 300ml cold drink",
+          "Muesli, fresh fruits, plain yoghurt drizzled with a little honey",
         image: "/waffle.jpg",
       },
       {
         id: "107",
-        name: "Cheese Burger",
-        price: "R50",
+        name: "Vegeterian Empanadas",
+        price: "R65",
         description:
-          "2 Chicken Breasts, lettuce, a slice of cheese, middle bun, 3 pickles and Dreamy Creamy sauce on a toasted sesame bun. Includes a regular Soul Fries and a 300ml cold drink",
+          "Home-made pastries done with vegetables, red peppers, onions and mozzarella",
         image: "/food3.jpg",
       },
       {
         id: "108",
-        name: "Chicken Wrap",
-        price: "R70",
-        description:
-          "2 Chicken Breasts, lettuce, a slice of cheese, middle bun, 3 pickles and Dreamy Creamy sauce on a toasted sesame bun. Includes a regular Soul Fries and a 300ml cold drink",
+        name: "Chicken Empanadas",
+        price: "R85",
+        description: "Homemade pastries made with savoury chicken",
         image: "/waffle.jpg",
       },
       {
         id: "109",
-        name: "Cheese Burger",
-        price: "R50",
+        name: "Chicken Livers",
+        price: "R75",
         description:
-          "2 Chicken Breasts, lettuce, a slice of cheese, middle bun, 3 pickles and Dreamy Creamy sauce on a toasted sesame bun. Includes a regular Soul Fries and a 300ml cold drink",
+          "Pan fried livers, on a spicy creamy sauce served with ciabatta",
         image: "/food3.jpg",
       },
       {
         id: "110",
-        name: "Chicken Wrap",
-        price: "R70",
-        description:
-          "2 Chicken Breasts, lettuce, a slice of cheese, middle bun, 3 pickles and Dreamy Creamy sauce on a toasted sesame bun. Includes a regular Soul Fries and a 300ml cold drink",
+        name: "Creamy Mussels",
+        price: "R80",
+        description: "Creamy white wine mussels served with toasted ciabatta",
         image: "/waffle.jpg",
       },
     ],
@@ -233,7 +230,7 @@ export default function RestaurantPage() {
             ].map((category) => (
               <button
                 key={category}
-                className="px-4 py-2 text-black rounded-full text-sm font-semibold bg-yellow-500 hover:bg-white hover:text-black cursor-pointer transition"
+                className="px-4 py-2 text-black rounded-full text-sm font-semibold bg-yellow-500 cursor-pointer transition"
               >
                 {category}
               </button>
