@@ -215,18 +215,21 @@ export default function RestaurantPage() {
         <div className="overflow-x-auto whitespace-nowrap pb-4 scrollbar-hide">
           <div className="flex space-x-3">
             {[
+              "Breakfast",
               "Chicken Only",
               "Chicken Meals",
               "Family Meals",
+              "Single Meals",
+              "Starters",
               "Burgers",
               "Pizza",
               "Wraps",
-              "Single Meals",
-              "Kids Meals",
-              "Snacks",
+              "Pastas",
+              "Salads",
+              "Seafood",
               "Sides",
+              "Desserts",
               "Cold Drinks",
-              "Meat Platters",
             ].map((category) => (
               <button
                 key={category}
@@ -243,7 +246,6 @@ export default function RestaurantPage() {
             <div
               key={item.id}
               className="rounded-xl p-4 shadow-xs shadow-neutral-600 flex flex-row items-center space-x-6"
-              onClick={() => setSelectedItem(item)}
             >
               {/* Image on the Left */}
               <div className="w-1/2 cursor-pointer">
@@ -253,6 +255,7 @@ export default function RestaurantPage() {
                   width={300}
                   height={200}
                   className="rounded-md object-cover"
+                  onClick={() => setSelectedItem(item)}
                 />
               </div>
 
@@ -270,14 +273,14 @@ export default function RestaurantPage() {
                 <div className="flex items-center space-x-4 mt-3">
                   <button
                     onClick={() => handleDecrease(item.id)}
-                    className="w-7 h-7 flex items-center justify-center bg-white text-black rounded-full hover:bg-gray-500 transition text-md font-semibold"
+                    className="w-7 h-7 flex items-center justify-center bg-white text-black rounded-full transition text-md cursor-pointer"
                   >
                     -
                   </button>
                   <span className="text-md ">{quantities[item.id] || 1}</span>
                   <button
                     onClick={() => handleIncrease(item.id)}
-                    className="w-7 h-7 flex items-center justify-center bg-white text-black rounded-full hover:bg-gray-500 transition text-md font-semibold"
+                    className="w-7 h-7 flex items-center justify-center bg-white text-black rounded-full transition text-md cursor-pointer"
                   >
                     +
                   </button>

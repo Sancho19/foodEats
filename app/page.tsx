@@ -69,7 +69,7 @@ export default function HomePage() {
             />
             <FaSearch className="text-gray-500 cursor-pointer" />
           </div>
-          <button className="px-4 py-2 bg-black text-white text-xs font-semibold rounded-xl hover:shadow-xl   cursor-pointer ">
+          <button className="px-4 py-2 bg-black text-white text-xs font-semibold rounded-xl hover:shadow-xl cursor-pointer ">
             Set Location
           </button>
         </div>
@@ -145,7 +145,7 @@ export default function HomePage() {
                     layout="fill"
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-t from-black to-transparent opacity-80 group-hover:opacity-100" />
+                  <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-t from-black to-transparent opacity-100" />
                 </div>
 
                 {/* Restaurant Name & Order Button */}

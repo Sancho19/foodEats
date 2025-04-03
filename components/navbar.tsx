@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { FaTimes, FaBars, FaSignOutAlt } from "react-icons/fa";
+import Image from "next/image";
 
 import { ShoppingCart } from "lucide-react";
 
@@ -28,11 +29,14 @@ export default function Navbar() {
 
         {/* Store Name in Center */}
         <div className="absolute left-1/2 transform -translate-x-1/2">
-          <Link
-            href="/"
-            className="text-2xl text-white font-semibold tracking-wide drop-shadow-lg hover:text-neutral-400 transition duration-200"
-          >
-            ZaiEats
+          <Link href="/">
+            <Image
+              src="/Logo.png" // Path to your logo image
+              alt="Store Logo"
+              width={80} // Define width (28*4 for scale)
+              height={80} // Set height to auto, maintaining aspect ratio
+              className="w-20 h-14"
+            />
           </Link>
         </div>
 
