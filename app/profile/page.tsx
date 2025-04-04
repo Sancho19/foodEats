@@ -8,12 +8,13 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Profile() {
   const [showAddress, setShowAddress] = useState(false);
   const [showCardDetails, setShowCardDetails] = useState(false);
+  const [tipPreference, setTipPreference] = useState("No Tip");
 
   const user = {
     firstName: "Sipho",
     lastName: "Van de Merwe",
     phoneNumber: "+27 64 819 4578",
-    address: "1234 Elm St, Springfield, IL, 62701",
+    address: "42 Payne Road, Durban, Glenwood, 4001",
     cardDetails: "**** **** **** 1234",
   };
 
@@ -138,7 +139,24 @@ export default function Profile() {
           <p className="text-sm text-neutral-400 mt-2">
             Notifications: Enabled
           </p>
-          <p className="text-sm text-neutral-400 mt-1">Language: English</p>
+          <p className="mt-3 text-sm text-neutral-400 mt-1">
+            Language: English
+          </p>
+          <div className="mt-3">
+            <label className="text-sm text-neutral-400 block mb-1">
+              Default Tip:
+            </label>
+            <select
+              value={tipPreference}
+              onChange={(e) => setTipPreference(e.target.value)}
+              className="text-xs w-20 bg-black border border-neutral-200/20 rounded-xl p-2 text-neutral-400 "
+            >
+              <option value="No Tip">No Tip</option>
+              <option value="10%">10%</option>
+              <option value="20%">20%</option>
+              <option value="30%">30%</option>
+            </select>
+          </div>
         </motion.div>
 
         <motion.div

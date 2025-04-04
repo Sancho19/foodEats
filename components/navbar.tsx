@@ -10,7 +10,8 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
   const [cartItems] = useState([
-    { id: 1, name: "Burger", price: 50, quantity: 2 },
+    { id: 1, name: "Cheese Burger", price: 50, quantity: 2 },
+    { id: 2, name: "Zai Benedict", price: 50, quantity: 2 },
   ]);
 
   const handleLogout = () => {
@@ -57,42 +58,50 @@ export default function Navbar() {
 
           {/* Cart Dropdown */}
           {cartOpen && (
-            <div className="fixed top-12 right-2 w-72 bg-black shadow-lg rounded-lg p-4 z-50">
+            <div className="fixed top-12 right-2 w-75 bg-black shadow-xl rounded-xl p-4 z-50 space-y-4">
               <button
                 onClick={() => setCartOpen(false)}
-                className="absolute top-2 right-2 text-white active:text-red-500 cursor-pointer"
+                className="absolute top-2 right-2 text-red-500"
               >
                 <FaTimes size={16} />
               </button>
-              <h3 className="text-md font-semibold mb-2">Cart Items</h3>
+
+              <h3 className="text-md font-semibold mb-3">Cart Items</h3>
+
               {cartItems.length > 0 ? (
-                <div className="max-h-60 overflow-y-auto ">
+                <div className="space-y-4 max-h-64 overflow-y-auto pr-1">
                   {cartItems.map((item) => (
                     <div
                       key={item.id}
-                      className="flex items-center justify-between p-2 border-b"
+                      className="flex items-center justify-between p-2 rounded-lg shadow-sm border border-neutral-200/20"
                     >
-                      <div>
-                        <p className="text-sm font-medium">{item.name}</p>
-                        <p className="text-xs text-gray-500">R{item.price}</p>
+                      <div className="flex items-center space-x-4">
+                        <div>
+                          <p className="text-sm font-semibold">{item.name}</p>
+                          <p className="text-xs text-gray-400">R{item.price}</p>
+                        </div>
                       </div>
-                      <p className="text-xs font-semibold">
-                        QTY: {item.quantity}
-                      </p>
+                      <div className="text-right text-xs font-medium">
+                        <p>Qty: {item.quantity}</p>
+                        <p className="text-gray-400 mt-1">
+                          R{item.price * item.quantity}
+                        </p>
+                      </div>
                     </div>
                   ))}
                 </div>
               ) : (
-                <p className="text-gray-500 text-sm text-center ">
+                <p className="text-gray-400 text-sm text-center mt-4">
                   Your cart is empty.
                 </p>
               )}
+
               <Link href="/cart">
                 <button
                   onClick={() => setCartOpen(false)}
-                  className="mt-3 w-full cursor-pointer font-semibold bg-yellow-500 text-black py-2 rounded-lg hover:bg-white transition"
+                  className="w-full mt-1 bg-yellow-500 text-black text-sm font-semibold py-2 rounded-lg hover:bg-yellow-400 transition"
                 >
-                  View Cart
+                  View Full Cart
                 </button>
               </Link>
             </div>
@@ -143,6 +152,13 @@ export default function Navbar() {
             className="flex items-center space-x-2 p-2 w-full rounded-xl active:bg-yellow-500 active:text-black transition duration-200"
           >
             <FaBars size={20} /> <span>My Orders</span>
+          </Link>
+          <Link
+            href="/cart"
+            onClick={() => setMenuOpen(false)}
+            className="flex items-center space-x-2 p-2 w-full rounded-xl active:bg-yellow-500 active:text-black transition duration-200"
+          >
+            <FaBars size={20} /> <span>My Cart</span>
           </Link>
           <Link
             href="/wishlist"
