@@ -302,7 +302,7 @@ export default function RestaurantPage() {
         >
           <div className="bg-black shadow-white shadow-xs p-6 rounded-2xl w-96 max-h-[80vh] overflow-y-auto relative scrollbar-hide">
             {/* ✅ "X" Button fixed inside the modal */}
-            <div className="absolute top-2 right-2">
+            <div className="absolute text-white top-2 right-2">
               <button
                 className="bg-red-600 text-white w-6 h-6 flex items-center justify-center rounded-full cursor-pointer text-xs"
                 onClick={() => setSelectedItem(null)}
