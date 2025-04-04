@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { FaMapMarkerAlt, FaStar, FaSearch } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
+import Footer from "@/components/footer";
 
 export default function HomePage() {
   const [location, setLocation] = useState("");
@@ -50,7 +51,12 @@ export default function HomePage() {
   return (
     <div className="bg-black min-h-screen text-white font-sans">
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center text-center p-12 bg-gradient-to-b from-orange-400/50 to-black text-black">
+      <motion.section
+        className="relative flex flex-col items-center justify-center text-center p-12 bg-gradient-to-b from-orange-400/50 to-black text-black"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+      >
         <h1 className="text-6xl font-extrabold drop-shadow-lg text-white tracking-wide mb-4">
           ZaiEats
         </h1>
@@ -73,8 +79,14 @@ export default function HomePage() {
             Set Location
           </button>
         </div>
-      </section>
-      <section className="w-full flex justify-center px-4 md:px-0">
+      </motion.section>
+      <motion.section
+        className="w-full flex justify-center px-4 md:px-0"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.2, duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <div className="p-1 bg-black w-full max-w-4xl rounded-lg shadow-lg">
           <h2 className="text-2xl font-semibold mb-6 text-center">
             Exclusive Deals
@@ -118,9 +130,15 @@ export default function HomePage() {
             </button>
           </div>
         </div>
-      </section>
+      </motion.section>
       {/* Restaurants Section */}
-      <section className="p-1 bg-black">
+      <motion.section
+        className="p-1 bg-black"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <h2 className="text-2xl font-bold mb-6 mt-12 text-center">
           Top Restaurants
         </h2>
@@ -159,7 +177,7 @@ export default function HomePage() {
                   <FaStar className="mr-1" /> {restaurant.rating}
                 </span>
                 <Link href={`/restaurant/${restaurant.id}`}>
-                  <button className="px-4 py-2 bg-yellow-500 text-black text-sm font-bold rounded-full hover:bg-black hover:text-white transition-colors ease-in-out">
+                  <button className="px-4 py-2 bg-yellow-500 text-black text-sm font-bold rounded-full active:bg-black active:text-white transition-colors cursor-pointer ease-in-out">
                     Order Now
                   </button>
                 </Link>
@@ -167,12 +185,10 @@ export default function HomePage() {
             </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* Footer */}
-      <footer className="p-6 text-center text-gray-400 bg-gray-950">
-        &copy; {new Date().getFullYear()} ZaiEats - All Rights Reserved
-      </footer>
+      <Footer />
     </div>
   );
 }

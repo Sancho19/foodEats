@@ -6,6 +6,7 @@ import Navbar from "@/components/navbar";
 import { useState } from "react";
 import { useParams } from "next/navigation";
 import { Dialog } from "@headlessui/react";
+import Footer from "@/components/footer";
 
 type MenuItem = {
   id: string;
@@ -303,7 +304,7 @@ export default function RestaurantPage() {
             {/* ✅ "X" Button fixed inside the modal */}
             <div className="absolute top-2 right-2">
               <button
-                className="bg-red-900 w-6 h-6 flex items-center justify-center rounded-full text-white cursor-pointer text-xs"
+                className="bg-red-600 text-white w-6 h-6 flex items-center justify-center rounded-full cursor-pointer text-xs"
                 onClick={() => setSelectedItem(null)}
               >
                 ✖
@@ -472,6 +473,7 @@ export default function RestaurantPage() {
           </div>
         </Dialog>
       )}
+      <Footer />
     </div>
   );
 }

@@ -60,7 +60,7 @@ export default function Navbar() {
             <div className="fixed top-12 right-2 w-72 bg-black shadow-lg rounded-lg p-4 z-50">
               <button
                 onClick={() => setCartOpen(false)}
-                className="absolute top-2 right-2 text-white hover:text-red-500 cursor-pointer"
+                className="absolute top-2 right-2 text-white active:text-red-500 cursor-pointer"
               >
                 <FaTimes size={16} />
               </button>
@@ -126,28 +126,28 @@ export default function Navbar() {
           <Link
             href="/"
             onClick={() => setMenuOpen(false)}
-            className="flex items-center space-x-2 p-2 w-full rounded-xl hover:bg-yellow-500 hover:text-black transition duration-200"
+            className="flex items-center space-x-2 p-2 w-full rounded-xl active:bg-yellow-500 active:text-black transition duration-200"
           >
             <ShoppingCart size={20} /> <span>Restaurants</span>
           </Link>
           <Link
             href="/profile"
             onClick={() => setMenuOpen(false)}
-            className="flex items-center space-x-2 p-2 w-full rounded-xl hover:bg-yellow-500 hover:text-black transition duration-200"
+            className="flex items-center space-x-2 p-2 w-full rounded-xl active:bg-yellow-500 active:text-black transition duration-200"
           >
             <FaBars size={20} /> <span>Profile</span>
           </Link>
           <Link
             href="/order"
             onClick={() => setMenuOpen(false)}
-            className="flex items-center space-x-2 p-2 w-full rounded-xl hover:bg-yellow-500 hover:text-black transition duration-200"
+            className="flex items-center space-x-2 p-2 w-full rounded-xl active:bg-yellow-500 active:text-black transition duration-200"
           >
             <FaBars size={20} /> <span>My Orders</span>
           </Link>
           <Link
             href="/wishlist"
             onClick={() => setMenuOpen(false)}
-            className="flex items-center space-x-2 p-2 w-full rounded-xl hover:bg-yellow-500 hover:text-black transition duration-200"
+            className="flex items-center space-x-2 p-2 w-full rounded-xl active:bg-yellow-500 active:text-black transition duration-200"
           >
             <FaBars size={20} /> <span>Wishlist</span>
           </Link>
@@ -162,7 +162,7 @@ export default function Navbar() {
               setMenuOpen(false);
               handleLogout();
             }}
-            className="flex items-center space-x-2  p-2 w-full rounded-xl bg-orange-400/30 hover:bg-yellow-500 hover:text-black transition duration-200 cursor-pointer"
+            className="flex items-center space-x-2  p-2 w-full rounded-xl bg-orange-400/30 active:bg-yellow-500 active:text-black transition duration-200 cursor-pointer"
           >
             <FaSignOutAlt size={20} /> <span>Logout</span>
           </button>
