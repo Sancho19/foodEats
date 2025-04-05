@@ -304,7 +304,7 @@ export default function RestaurantPage() {
             {/* ✅ "X" Button fixed inside the modal */}
             <div className="absolute top-2 right-2">
               <button
-                className="bg-red-600 text-neutral-100 w-6 h-6 flex items-center justify-center rounded-full cursor-pointer text-xs"
+                className=" w-6 h-6 flex items-center justify-center rounded-full cursor-pointer text-xs"
                 onClick={() => setSelectedItem(null)}
               >
                 ✖

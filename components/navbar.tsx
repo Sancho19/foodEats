@@ -11,7 +11,7 @@ export default function Navbar() {
   const [cartOpen, setCartOpen] = useState(false);
   const [cartItems] = useState([
     { id: 1, name: "Cheese Burger", price: 50, quantity: 2 },
-    { id: 2, name: "Zai Benedict", price: 50, quantity: 2 },
+    { id: 2, name: "Zai Benedict", price: 75, quantity: 2 },
   ]);
 
   const handleLogout = () => {
@@ -47,7 +47,7 @@ export default function Navbar() {
           <button onClick={() => setCartOpen(!cartOpen)} className="relative">
             <ShoppingCart
               size={24}
-              className="text-gray-300 hover:text-neutral-400  cursor-pointer transition"
+              className="text-gray-300 active:text-neutral-400  cursor-pointer transition"
             />
             {cartItems.length > 0 && (
               <span className="absolute -top-1 -right-2 bg-red-600 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
@@ -61,7 +61,7 @@ export default function Navbar() {
             <div className="fixed top-12 right-2 w-75 bg-black shadow-xl rounded-xl p-4 z-50 space-y-4">
               <button
                 onClick={() => setCartOpen(false)}
-                className="absolute top-2 right-2 text-red-500"
+                className="absolute top-2 right-2"
               >
                 <FaTimes size={16} />
               </button>
