@@ -168,7 +168,7 @@ export default function Profile() {
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.97 }}
-            className="bg-red-800/80 active:bg-red-600 w-full text-white text-sm font-semibold py-2 px-6 rounded-lg transition"
+            className="bg-red-800/80 active:bg-red-600 w-full text-white text-sm font-semibold py-2 px-6 rounded-lg transition cursor-pointer"
           >
             Log Out
           </motion.button>

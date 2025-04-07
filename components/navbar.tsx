@@ -161,6 +161,13 @@ export default function Navbar() {
             <FaBars size={20} /> <span>My Cart</span>
           </Link>
           <Link
+            href="/driver"
+            onClick={() => setMenuOpen(false)}
+            className="flex items-center space-x-2 p-2 w-full rounded-xl active:bg-yellow-500 active:text-black transition duration-200"
+          >
+            <FaBars size={20} /> <span>Become a Driver</span>
+          </Link>
+          <Link
             href="/wishlist"
             onClick={() => setMenuOpen(false)}
             className="flex items-center space-x-2 p-2 w-full rounded-xl active:bg-yellow-500 active:text-black transition duration-200"

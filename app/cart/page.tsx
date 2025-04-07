@@ -104,7 +104,7 @@ export default function Cart() {
                       <div className="flex items-center space-x-4">
                         <button
                           onClick={() => handleRemove(item)}
-                          className="text-xl text-red-600 active:text-red-800"
+                          className="text-xl text-red-600 active:text-red-800 cursor-pointer"
                         >
                           -
                         </button>
@@ -113,7 +113,7 @@ export default function Cart() {
                         </span>
                         <button
                           onClick={() => handleAdd(item)}
-                          className="text-xl text-green-600 active:text-green-800"
+                          className="text-xl text-green-600 active:text-green-800 cursor-pointer"
                         >
                           +
                         </button>
@@ -144,10 +144,10 @@ export default function Cart() {
                   <span>Total</span>
                   <span>R {total}</span>
                 </div>
-                <button className="mt-6 w-full text-black py-2 rounded-lg bg-yellow-500 active:bg-white active:text-black transition">
+                <button className="mt-6 w-full text-black py-2 rounded-lg bg-yellow-500 active:bg-white active:text-black transition cursor-pointer">
                   Browse Restaurants
                 </button>
-                <button className="mt-6 w-full  py-2 rounded-lg bg-green-900/60 text-white active:bg-white active:text-black transition">
+                <button className="mt-6 w-full  py-2 rounded-lg bg-green-900/60 text-white active:bg-white active:text-black transition cursor-pointer">
                   Proceed to Checkout
                 </button>
               </motion.div>
