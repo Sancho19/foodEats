@@ -32,14 +32,14 @@ export default function Order() {
 
   const activeOrders: ActiveOrder[] = [
     {
-      id: "A123",
+      id: "Z123",
       created_at: "2025-04-01T12:34:56Z",
       status: "Preparing",
       etaMinutes: 30,
       items: ["Zai Burger", "Fries"],
     },
     {
-      id: "A124",
+      id: "Z124",
       created_at: "2025-04-02T15:22:31Z",
       status: "Out for Delivery",
       etaMinutes: 15,
@@ -49,17 +49,31 @@ export default function Order() {
 
   const pastOrders: PastOrder[] = [
     {
-      id: "P101",
+      id: "Z101",
       created_at: "2025-03-20T09:15:00Z",
       status: "Completed",
-      items: ["Wrap", "Smoothie"],
+      items: ["Cheese Burger", "Chicken Empanadas"],
       rating: 4,
     },
     {
-      id: "P102",
+      id: "Z102",
       created_at: "2025-03-15T18:45:22Z",
       status: "Completed",
-      items: ["Salad"],
+      items: ["Fresh Fruit Salad"],
+      rating: 4,
+    },
+    {
+      id: "Z103",
+      created_at: "2025-02-28T11:15:00Z",
+      status: "Completed",
+      items: ["Creamy Mussels", "Chicken Livers"],
+      rating: 4,
+    },
+    {
+      id: "Z104",
+      created_at: "2025-02-21T14:45:22Z",
+      status: "Completed",
+      items: ["Zai Benedict"],
       rating: 5,
     },
   ];
@@ -177,7 +191,7 @@ export default function Order() {
                 {/* View Details Toggle */}
                 <button
                   onClick={() => handleToggleExpand(order.id)}
-                  className="text-blue-600 text-sm mt-2 hover:underline"
+                  className="text-blue-400/80 text-sm mt-2 active:underline"
                 >
                   {expandedOrders.includes(order.id)
                     ? "Hide Details"
@@ -204,7 +218,7 @@ export default function Order() {
                                 className={`cursor-pointer text-lg ${
                                   (ratings[order.id] || order.rating || 0) >=
                                   star
-                                    ? "text-yellow-400"
+                                    ? "text-yellow-500"
                                     : "text-gray-300"
                                 }`}
                                 onClick={() => handleRating(order.id, star)}
@@ -214,7 +228,7 @@ export default function Order() {
                             ))}
                           </div>
                         </div>
-                        <button className="mt-4 text-green-700 hover:underline text-sm">
+                        <button className="mt-4 text-yellow-500 active:underline text-sm">
                           Reorder
                         </button>
                       </>
