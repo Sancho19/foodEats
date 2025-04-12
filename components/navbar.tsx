@@ -4,7 +4,13 @@ import { useState } from "react";
 import { FaTimes, FaBars, FaSignOutAlt } from "react-icons/fa";
 import Image from "next/image";
 
-import { ShoppingCart } from "lucide-react";
+import {
+  CarFront,
+  ReceiptText,
+  ShoppingBasket,
+  ShoppingCart,
+  User,
+} from "lucide-react";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -125,7 +131,7 @@ export default function Navbar() {
         {/* User Section */}
         <div className="flex flex-col items-center mb-6">
           <div className="w-12 h-12 rounded-full bg-orange-400/30 text-center flex items-center justify-center font-bold mb-2">
-            A
+            S
           </div>
           <p className="text-md">Welcome, Sipho!</p>
         </div>
@@ -144,36 +150,36 @@ export default function Navbar() {
             onClick={() => setMenuOpen(false)}
             className="flex items-center space-x-2 p-2 w-full rounded-xl active:bg-yellow-500 active:text-black transition duration-200"
           >
-            <FaBars size={20} /> <span>Profile</span>
+            <User size={20} /> <span>Profile</span>
           </Link>
           <Link
             href="/order"
             onClick={() => setMenuOpen(false)}
             className="flex items-center space-x-2 p-2 w-full rounded-xl active:bg-yellow-500 active:text-black transition duration-200"
           >
-            <FaBars size={20} /> <span>My Orders</span>
+            <ReceiptText size={20} /> <span>My Orders</span>
           </Link>
           <Link
             href="/cart"
             onClick={() => setMenuOpen(false)}
             className="flex items-center space-x-2 p-2 w-full rounded-xl active:bg-yellow-500 active:text-black transition duration-200"
           >
-            <FaBars size={20} /> <span>My Cart</span>
+            <ShoppingBasket size={20} /> <span>My Cart</span>
           </Link>
           <Link
             href="/driver"
             onClick={() => setMenuOpen(false)}
             className="flex items-center space-x-2 p-2 w-full rounded-xl active:bg-yellow-500 active:text-black transition duration-200"
           >
-            <FaBars size={20} /> <span>Become a Driver</span>
+            <CarFront size={20} /> <span>Become a Driver</span>
           </Link>
-          <Link
+          {/* <Link
             href="/wishlist"
             onClick={() => setMenuOpen(false)}
             className="flex items-center space-x-2 p-2 w-full rounded-xl active:bg-yellow-500 active:text-black transition duration-200"
           >
             <FaBars size={20} /> <span>Wishlist</span>
-          </Link>
+          </Link> */}
         </div>
 
         <div className="w-full border-t-2 border-white my-4"></div>

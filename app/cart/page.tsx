@@ -54,7 +54,22 @@ export default function Cart() {
     0
   );
   const deliveryFee = subtotal > 0 ? 25 : 0;
-  const total = subtotal + deliveryFee;
+
+  const [promoCode, setPromoCode] = useState("");
+  const [discount, setDiscount] = useState(0);
+
+  const applyPromoCode = () => {
+    if (promoCode.toLowerCase() === "zai10") {
+      setDiscount(10);
+    } else {
+      setDiscount(0);
+    }
+  };
+
+  const estimatedTime = `${30 + cartItems.length * 5} mins`;
+
+  const total = subtotal + deliveryFee - discount;
+
   return (
     <>
       <Navbar />
@@ -131,6 +146,13 @@ export default function Cart() {
                 className=" p-6 rounded-xl shadow-md"
               >
                 <h2 className="text-xl font-semibold mb-4">Order Summary</h2>
+                <div className="text-sm text-gray-500 mb-4">
+                  Estimated delivery:{" "}
+                  <span className="font-medium text-black">
+                    {estimatedTime}
+                  </span>
+                </div>
+
                 <div className="flex justify-between mb-2 text-sm">
                   <span>Subtotal</span>
                   <span>R {subtotal}</span>
@@ -139,12 +161,36 @@ export default function Cart() {
                   <span>Delivery</span>
                   <span>R {deliveryFee}</span>
                 </div>
+                {discount > 0 && (
+                  <div className="flex justify-between mb-2 text-sm text-green-600 font-medium">
+                    <span>Discount</span>
+                    <span>- R {discount}</span>
+                  </div>
+                )}
+
                 <div className="border-t border-gray-300 my-3" />
                 <div className="flex justify-between font-bold text-lg">
                   <span>Total</span>
+
                   <span>R {total}</span>
                 </div>
-                <button className="mt-6 w-full text-black py-2 rounded-lg bg-yellow-500 active:bg-white active:text-black transition cursor-pointer">
+                {/* Promo Code Field */}
+                <div className="mt-4">
+                  <input
+                    type="text"
+                    placeholder="Promo Code"
+                    value={promoCode}
+                    onChange={(e) => setPromoCode(e.target.value)}
+                    className="w-full p-2 rounded-lg border border-gray-300 text-sm focus:outline-none"
+                  />
+                  <button
+                    onClick={applyPromoCode}
+                    className="mt-4 w-full py-1 rounded-lg bg-blue-600 text-white active:bg-blue-800 transition"
+                  >
+                    Apply Promo Code
+                  </button>
+                </div>
+                <button className="mt-8 w-full text-black py-2 rounded-lg bg-yellow-500 active:bg-white active:text-black transition cursor-pointer">
                   Browse Restaurants
                 </button>
                 <button className="mt-6 w-full  py-2 rounded-lg bg-green-900/60 text-white active:bg-white active:text-black transition cursor-pointer">
