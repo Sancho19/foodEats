@@ -23,7 +23,7 @@ export default function HamburgerMenu() {
     <>
       <button
         onClick={() => setMenuOpen(!menuOpen)}
-        className="fixed top-5 left-4 z-50 text-white text-xl md:hidden"
+        className="fixed top-5 left-4 z-50 text-white text-xl md:hidden cursor-pointer"
       >
         {menuOpen ? "" : <FaBars />}
       </button>

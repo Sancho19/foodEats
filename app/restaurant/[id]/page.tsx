@@ -193,14 +193,14 @@ export default function RestaurantPage() {
         {/* Text over the Image */}
         <div className="absolute inset-0 bg-opacity-50 z-20 flex flex-col justify-center items-center px-0">
           {/* Restaurant Name */}
-          <h1 className="text-6xl md:text-5xl font-bold text-yellow-500 text-center tracking-wider Tangerine">
+          <h1 className="text-3xl md:text-5xl font-bold text-yellow-500 text-center tracking-wider ">
             {restaurant.name}
           </h1>
 
           {/* Restaurant Rating - INLINE */}
           <div className="flex items-center mt-1 space-x-1">
             <FaStar className="text-yellow-500" />
-            <span className="text-lg font-semibold Charm">
+            <span className="text-md font-semibold ">
               {restaurant.rating} Stars
             </span>
           </div>
@@ -231,14 +231,14 @@ export default function RestaurantPage() {
             ].map((category) => (
               <button
                 key={category}
-                className="px-4 py-2 text-black rounded-full text-md font-bold bg-yellow-700 cursor-pointer transition Charm"
+                className="px-4 py-2 text-black rounded-full text-sm font-bold bg-yellow-700 cursor-pointer transition "
               >
                 {category}
               </button>
             ))}
           </div>
         </div>
-        <h2 className="text-3xl tracking-wide font-bold text-white mb-6 text-center Charm">
+        <h2 className="text-2xl tracking-wide font-bold text-white mb-6 text-center ">
           Menu
         </h2>
         <div className="grid grid-cols-1 gap-6">
@@ -261,11 +261,11 @@ export default function RestaurantPage() {
 
               {/* Text on the Right */}
               <div className="w-50 flex flex-col">
-                <h3 className="text-lg Rye">{item.name}</h3>
-                <p className="text-md text-yellow-500 font-bold Charm">
+                <h3 className="text-lg font-bold">{item.name}</h3>
+                <p className="text-md text-yellow-500 font-bold ">
                   {item.price}
                 </p>
-                <p className="text-white text-sm line-clamp-2 Charm">
+                <p className="text-white text-xs line-clamp-2 ">
                   {item.description}
                 </p>
 
@@ -320,11 +320,13 @@ export default function RestaurantPage() {
                 height={300}
                 className="rounded-md mb-4"
               />
-              <h3 className="text-xl text-white Rye">{selectedItem.name}</h3>
-              <p className="text-sm text-neutral-400 Charm">
+              <h3 className="text-xl font-bold text-white ">
+                {selectedItem.name}
+              </h3>
+              <p className="text-sm text-neutral-400 ">
                 {selectedItem.description}
               </p>
-              <p className="text-lg font-bold text-yellow-500 mt-2 Charm">
+              <p className="text-lg font-bold text-yellow-500 mt-2 ">
                 {selectedItem.price}
               </p>
 

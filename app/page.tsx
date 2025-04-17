@@ -74,7 +74,7 @@ export default function HomePage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
       >
-        <h1 className="text-7xl font-extrabold drop-shadow-lg text-white tracking-wider mb-1 Tangerine">
+        <h1 className="text-5xl font-extrabold drop-shadow-lg text-white tracking-wider mb-1 ">
           ZaiEats
         </h1>
 
@@ -87,7 +87,7 @@ export default function HomePage() {
           ]}
           wrapper="span"
           speed={50}
-          className="text-sm text-neutral-400 font-extrabold drop-shadow-lg mb-4 Charm"
+          className="text-xs text-neutral-400 font-extrabold drop-shadow-lg mb-4 "
           repeat={Infinity}
         />
 
@@ -104,7 +104,7 @@ export default function HomePage() {
             />
             <FaSearch className="text-gray-500 cursor-pointer" />
           </div>
-          <button className="px-4 py-2 bg-black text-white text-xs rounded-xl hover:shadow-xl font-tangerine cursor-pointer ">
+          <button className="px-4 py-2 bg-black text-white text-xs rounded-xl hover:shadow-xl cursor-pointer ">
             Set Location
           </button>
         </div>
@@ -118,7 +118,9 @@ export default function HomePage() {
         viewport={{ once: true }}
       >
         <div className="p-1 bg-black w-full max-w-4xl rounded-lg shadow-lg">
-          <h2 className="text-xl mb-6 text-center Rye">Exclusive Deals</h2>
+          <h2 className="text-xl mb-6 font-bold text-center ">
+            Exclusive Deals
+          </h2>
 
           {/* Wide Carousel Container */}
           <div className="relative flex items-center justify-center w-full">
@@ -167,7 +169,9 @@ export default function HomePage() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-xl mb-6 mt-12 text-center Rye">Top Restaurants</h2>
+        <h2 className="text-xl mb-6 mt-12 text-center font-bold">
+          Top Restaurants
+        </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 px-4 mb-10">
           {[
             { id: 1, name: "Zai", image: "/food1.jpg", rating: 4.8 },
@@ -193,7 +197,7 @@ export default function HomePage() {
                 </div>
 
                 {/* Restaurant Name & Order Button */}
-                <div className="absolute bottom-4 left-6 text-white font-semibold text-4xl Tangerine">
+                <div className="absolute bottom-4 left-6 text-white tracking-wide font-semibold text-lg ">
                   {restaurant.name}
                 </div>
               </Link>
