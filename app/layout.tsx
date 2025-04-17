@@ -34,7 +34,7 @@ export default function RootLayout({
           crossOrigin=""
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&family=Rye&family=Charm:wght@400;700&display=swap"
           rel="stylesheet"
         />
       </head>

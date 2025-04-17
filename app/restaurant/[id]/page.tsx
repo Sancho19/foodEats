@@ -193,14 +193,14 @@ export default function RestaurantPage() {
         {/* Text over the Image */}
         <div className="absolute inset-0 bg-opacity-50 z-20 flex flex-col justify-center items-center px-0">
           {/* Restaurant Name */}
-          <h1 className="text-4xl md:text-5xl font-bold text-yellow-500 text-center tracking-wider">
+          <h1 className="text-6xl md:text-5xl font-bold text-yellow-500 text-center tracking-wider Tangerine">
             {restaurant.name}
           </h1>
 
           {/* Restaurant Rating - INLINE */}
-          <div className="flex items-center mt-2 space-x-1">
+          <div className="flex items-center mt-1 space-x-1">
             <FaStar className="text-yellow-500" />
-            <span className="text-lg font-semibold">
+            <span className="text-lg font-semibold Charm">
               {restaurant.rating} Stars
             </span>
           </div>
@@ -231,14 +231,16 @@ export default function RestaurantPage() {
             ].map((category) => (
               <button
                 key={category}
-                className="px-4 py-2 text-black rounded-full text-sm font-semibold bg-yellow-500 cursor-pointer transition"
+                className="px-4 py-2 text-black rounded-full text-md font-bold bg-white cursor-pointer transition Charm"
               >
                 {category}
               </button>
             ))}
           </div>
         </div>
-        <h2 className="text-3xl font-bold text-white mb-6 text-center">Menu</h2>
+        <h2 className="text-3xl tracking-wide font-bold text-yellow-800 mb-6 text-center Charm">
+          Menu
+        </h2>
         <div className="grid grid-cols-1 gap-6">
           {restaurant.menu.map((item) => (
             <div
@@ -259,11 +261,11 @@ export default function RestaurantPage() {
 
               {/* Text on the Right */}
               <div className="w-50 flex flex-col">
-                <h3 className="text-lg font-semibold">{item.name}</h3>
-                <p className="text-md text-yellow-500 font-bold">
+                <h3 className="text-lg Rye">{item.name}</h3>
+                <p className="text-md text-yellow-500 font-bold Charm">
                   {item.price}
                 </p>
-                <p className="text-white font-bold text-xs line-clamp-2">
+                <p className="text-white text-sm line-clamp-2 Charm">
                   {item.description}
                 </p>
 
@@ -271,14 +273,14 @@ export default function RestaurantPage() {
                 <div className="flex items-center space-x-4 mt-3">
                   <button
                     onClick={() => handleDecrease(item.id)}
-                    className="w-7 h-7 flex items-center justify-center bg-white text-black rounded-full transition text-md cursor-pointer"
+                    className="w-5 h-5 flex items-center justify-center bg-white font-bold text-black rounded-full transition text-md cursor-pointer active:text-red-800"
                   >
                     -
                   </button>
                   <span className="text-md ">{quantities[item.id] || 1}</span>
                   <button
                     onClick={() => handleIncrease(item.id)}
-                    className="w-7 h-7 flex items-center justify-center bg-white text-black rounded-full transition text-md cursor-pointer"
+                    className="w-5 h-5 flex items-center justify-center bg-white text-black rounded-full transition text-md cursor-pointer font-bold active:text-green-800"
                   >
                     +
                   </button>
@@ -318,13 +320,11 @@ export default function RestaurantPage() {
                 height={300}
                 className="rounded-md mb-4"
               />
-              <h3 className="text-xl font-bold text-white">
-                {selectedItem.name}
-              </h3>
-              <p className="text-sm text-neutral-400">
+              <h3 className="text-xl text-white Rye">{selectedItem.name}</h3>
+              <p className="text-sm text-neutral-400 Charm">
                 {selectedItem.description}
               </p>
-              <p className="text-lg font-bold text-yellow-500 mt-2">
+              <p className="text-lg font-bold text-yellow-500 mt-2 Charm">
                 {selectedItem.price}
               </p>
 
@@ -343,7 +343,7 @@ export default function RestaurantPage() {
                       checked={selectedCut.includes("Uncut")}
                       onChange={(e) => handleCheckboxChange(e)}
                       className="w-4 h-4 mr-2 border-1 border-white rounded-full bg-transparent cursor-pointer 
-               appearance-none checked:bg-orange-400/50
+               appearance-none checked:bg-yellow-800
                transition-all duration-200 ease-in-out"
                     />
                     <label htmlFor="uncut" className="text-sm">
@@ -358,7 +358,7 @@ export default function RestaurantPage() {
                       checked={selectedCut.includes("Halves")}
                       onChange={(e) => handleCheckboxChange(e)}
                       className="w-4 h-4 mr-2 border-1 border-white rounded-full bg-transparent cursor-pointer 
-               appearance-none checked:bg-orange-400/50 
+               appearance-none checked:bg-yellow-800
                transition-all duration-200 ease-in-out"
                     />
                     <label htmlFor="halves" className="text-sm">
@@ -373,7 +373,7 @@ export default function RestaurantPage() {
                       checked={selectedCut.includes("Quarters")}
                       onChange={(e) => handleCheckboxChange(e)}
                       className="w-4 h-4 mr-2 border-1 border-white rounded-full bg-transparent cursor-pointer 
-               appearance-none checked:bg-orange-400/50
+               appearance-none checked:bg-yellow-800
                transition-all duration-200 ease-in-out"
                     />
                     <label htmlFor="quarters" className="text-sm">
@@ -388,7 +388,7 @@ export default function RestaurantPage() {
                       checked={selectedCut.includes("Quarters")}
                       onChange={(e) => handleCheckboxChange(e)}
                       className="w-4 h-4 mr-2 border-1 border-white rounded-full bg-transparent cursor-pointer 
-               appearance-none checked:bg-orange-400/50 
+               appearance-none checked:bg-yellow-800
                transition-all duration-200 ease-in-out"
                     />
                     <label htmlFor="quarters" className="text-sm">
@@ -411,7 +411,7 @@ export default function RestaurantPage() {
                       checked={selectedCut.includes("BBQ Basting")}
                       onChange={(e) => handleCheckboxChange(e)}
                       className="w-4 h-4 mr-2 border-1 border-white rounded-full bg-transparent cursor-pointer
-               appearance-none checked:bg-orange-400/50
+               appearance-none checked:bg-yellow-800
                transition-all duration-200 ease-in-out"
                     />
                     <label htmlFor="uncut" className="text-sm">
@@ -426,7 +426,7 @@ export default function RestaurantPage() {
                       checked={selectedCut.includes("Hot Basting")}
                       onChange={(e) => handleCheckboxChange(e)}
                       className="w-4 h-4 mr-2 border-1 border-white rounded-full bg-transparent cursor-pointer
-               appearance-none checked:bg-orange-400/50
+               appearance-none checked:bg-yellow-800
                transition-all duration-200 ease-in-out"
                     />
                     <label htmlFor="halves" className="text-sm">
@@ -441,7 +441,7 @@ export default function RestaurantPage() {
                       checked={selectedCut.includes("Mild Basting")}
                       onChange={(e) => handleCheckboxChange(e)}
                       className="w-4 h-4 mr-2 border-1 border-white rounded-full bg-transparent cursor-pointer 
-               appearance-none checked:bg-orange-400/50 
+               appearance-none checked:bg-yellow-800
                transition-all duration-200 ease-in-out"
                     />
                     <label htmlFor="quarters" className="text-sm">
@@ -456,7 +456,7 @@ export default function RestaurantPage() {
                       checked={selectedCut.includes("Lemon & Herb Basting")}
                       onChange={(e) => handleCheckboxChange(e)}
                       className="w-4 h-4 mr-2 border-1 border-white rounded-full bg-transparent cursor-pointer 
-               appearance-none checked:bg-orange-400/50 
+               appearance-none checked:bg-yellow-800
                transition-all duration-200 ease-in-out "
                     />
                     <label htmlFor="quarters" className="text-sm">

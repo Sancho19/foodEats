@@ -24,7 +24,7 @@ export default function Navbar() {
     console.log("User logged out");
   };
   return (
-    <nav className="bg-orange-400/30 backdrop-blur-3xl shadow-sm text-white fixed top-0 left-0 w-full z-50 py-5">
+    <nav className="bg-yellow-800 backdrop-blur-3xl shadow-sm text-white fixed top-0 left-0 w-full z-50 py-5">
       <div className="container mx-auto flex justify-between items-center px-4 relative">
         {/* Hamburger Menu */}
         <button
@@ -130,7 +130,7 @@ export default function Navbar() {
 
         {/* User Section */}
         <div className="flex flex-col items-center mb-6">
-          <div className="w-12 h-12 rounded-full bg-orange-400/30 text-center flex items-center justify-center font-bold mb-2">
+          <div className="w-12 h-12 rounded-full bg-yellow-800 text-center flex items-center justify-center font-bold mb-2">
             S
           </div>
           <p className="text-md">Welcome, Sipho!</p>
@@ -191,7 +191,7 @@ export default function Navbar() {
               setMenuOpen(false);
               handleLogout();
             }}
-            className="flex items-center space-x-2  p-2 w-full rounded-xl bg-orange-400/30 active:bg-yellow-500 active:text-black transition duration-200 cursor-pointer"
+            className="flex items-center space-x-2  p-2 w-full rounded-xl bg-yellow-800 active:bg-yellow-500 active:text-black transition duration-200 cursor-pointer"
           >
             <FaSignOutAlt size={20} /> <span>Logout</span>
           </button>

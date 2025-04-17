@@ -13,6 +13,7 @@ export default function Cart() {
     quantity: number;
     image: string;
   };
+  const [isDelivery, setIsDelivery] = useState(true);
 
   const [cartItems, setCartItems] = useState<CartItem[]>([
     {
@@ -53,7 +54,7 @@ export default function Cart() {
     (acc, item) => acc + item.price * item.quantity,
     0
   );
-  const deliveryFee = subtotal > 0 ? 25 : 0;
+  const deliveryFee = isDelivery && subtotal > 0 ? 25 : 0;
 
   const [promoCode, setPromoCode] = useState("");
   const [discount, setDiscount] = useState(0);
@@ -145,12 +146,46 @@ export default function Cart() {
                 animate={{ opacity: 1, x: 0 }}
                 className=" p-6 rounded-xl shadow-md"
               >
-                <h2 className="text-xl font-semibold mb-4">Order Summary</h2>
+                {/* Delivery Mode Toggle */}
+                <div className="flex justify-center gap-4 mb-4">
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="deliveryOption"
+                      value="delivery"
+                      checked={deliveryFee > 0}
+                      onChange={() => setIsDelivery(true)}
+                      className="accent-yellow-600"
+                    />
+                    <span className="text-sm font-medium">Delivery</span>
+                  </label>
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="deliveryOption"
+                      value="collection"
+                      checked={deliveryFee === 0}
+                      onChange={() => setIsDelivery(false)}
+                      className="accent-yellow-600"
+                    />
+                    <span className="text-sm font-medium">Collection</span>
+                  </label>
+                </div>
+
+                <h2 className="text-xl font-semibold mb-2">Order Summary</h2>
                 <div className="text-sm text-gray-500 mb-4">
-                  Estimated delivery:{" "}
-                  <span className="font-medium text-black">
-                    {estimatedTime}
-                  </span>
+                  {isDelivery ? (
+                    <>
+                      Estimated delivery:{" 25 mins"}
+                      <span className="font-medium text-black">
+                        {estimatedTime}
+                      </span>
+                    </>
+                  ) : (
+                    <span className="font-medium text-black">
+                      Ready for collection in 15 mins
+                    </span>
+                  )}
                 </div>
 
                 <div className="flex justify-between mb-2 text-sm">

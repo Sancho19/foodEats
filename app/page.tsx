@@ -5,11 +5,27 @@ import { FaMapMarkerAlt, FaStar, FaSearch } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/footer";
+import HamburgerMenu from "@/components/hamburgerMenu";
+import { TypeAnimation } from "react-type-animation";
 
 export default function HomePage() {
   const [location, setLocation] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  <TypeAnimation
+    sequence={[
+      "Fast. Reliable. Delicious.",
+      2000,
+      "Craving something new?",
+      2000,
+      "Delivered to your door.",
+      2000,
+    ]}
+    wrapper="span"
+    speed={50}
+    className="text-neutral-200 text-lg font-medium"
+    repeat={Infinity}
+  />;
   const deals = [
     {
       title: "50% Off on Burgers",
@@ -50,6 +66,7 @@ export default function HomePage() {
   };
   return (
     <div className="bg-black min-h-screen text-white font-sans">
+      <HamburgerMenu />
       {/* Hero Section */}
       <motion.section
         className="relative flex flex-col items-center justify-center text-center p-12 bg-gradient-to-b from-yellow-800 to-black text-black"
@@ -57,15 +74,27 @@ export default function HomePage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
       >
-        <h1 className="text-7xl font-extrabold drop-shadow-lg text-white tracking-wide mb-2">
+        <h1 className="text-7xl font-extrabold drop-shadow-lg text-white tracking-wider mb-1 Tangerine">
           ZaiEats
         </h1>
-        <h2 className="text-md text-neutral-400 font-extrabold drop-shadow-lg mb-4">
-          Gourmet Moments, Delivered With Elegant Ease.
-        </h2>
+
+        <TypeAnimation
+          sequence={[
+            "Gourmet Moments, Delivered With Elegant Ease.",
+            2000,
+            "Food you love, delivered fast.",
+            2000,
+          ]}
+          wrapper="span"
+          speed={50}
+          className="text-sm text-neutral-400 font-extrabold drop-shadow-lg mb-4 Charm"
+          repeat={Infinity}
+        />
+
+        {/* Location Input */}
         <div className="flex mt-6 space-x-4">
           <div className="flex items-center space-x-2 bg-white px-4 my-2 rounded-full">
-            <FaMapMarkerAlt className="text-orange-500/80" />
+            <FaMapMarkerAlt className="text-yellow-800" />
             <input
               type="text"
               placeholder="Enter your location"
@@ -80,6 +109,7 @@ export default function HomePage() {
           </button>
         </div>
       </motion.section>
+
       <motion.section
         className="w-full flex justify-center px-4 md:px-0"
         initial={{ opacity: 0 }}
@@ -88,13 +118,7 @@ export default function HomePage() {
         viewport={{ once: true }}
       >
         <div className="p-1 bg-black w-full max-w-4xl rounded-lg shadow-lg">
-          <h2
-            className="text-2xl font-semibold mb-6 text-center"
-            style={{ fontFamily: '"Rye", cursive' }}
-          >
-            Exclusive Deals
-          </h2>
-          <p className="Tangerine text-5xl">Testing Tangerine Font Here</p>
+          <h2 className="text-xl mb-6 text-center Rye">Exclusive Deals</h2>
 
           {/* Wide Carousel Container */}
           <div className="relative flex items-center justify-center w-full">
@@ -143,9 +167,7 @@ export default function HomePage() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-2xl font-bold mb-6 mt-12 text-center">
-          Top Restaurants
-        </h2>
+        <h2 className="text-xl mb-6 mt-12 text-center Rye">Top Restaurants</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 px-4 mb-10">
           {[
             { id: 1, name: "Zai", image: "/food1.jpg", rating: 4.8 },
@@ -171,10 +193,7 @@ export default function HomePage() {
                 </div>
 
                 {/* Restaurant Name & Order Button */}
-                <div
-                  className="absolute bottom-4 left-6 text-white font-semibold text-4xl"
-                  style={{ fontFamily: '"Tangerine", cursive' }}
-                >
+                <div className="absolute bottom-4 left-6 text-white font-semibold text-4xl Tangerine">
                   {restaurant.name}
                 </div>
               </Link>
