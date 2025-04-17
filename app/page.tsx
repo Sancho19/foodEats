@@ -52,16 +52,16 @@ export default function HomePage() {
     <div className="bg-black min-h-screen text-white font-sans">
       {/* Hero Section */}
       <motion.section
-        className="relative flex flex-col items-center justify-center text-center p-12 bg-gradient-to-b from-orange-400/50 to-black text-black"
+        className="relative flex flex-col items-center justify-center text-center p-12 bg-gradient-to-b from-yellow-800 to-black text-black"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
       >
-        <h1 className="text-6xl font-extrabold drop-shadow-lg text-white tracking-wide mb-4">
+        <h1 className="text-7xl font-extrabold drop-shadow-lg text-white tracking-wide mb-2">
           ZaiEats
         </h1>
-        <h2 className="text-lg text-neutral-400 font-extrabold drop-shadow-lg mb-4">
-          Fast, Fresh, Local – Delivered to You!
+        <h2 className="text-md text-neutral-400 font-extrabold drop-shadow-lg mb-4">
+          Gourmet Moments, Delivered With Elegant Ease.
         </h2>
         <div className="flex mt-6 space-x-4">
           <div className="flex items-center space-x-2 bg-white px-4 my-2 rounded-full">
@@ -75,7 +75,7 @@ export default function HomePage() {
             />
             <FaSearch className="text-gray-500 cursor-pointer" />
           </div>
-          <button className="px-4 py-2 bg-black text-white text-xs font-semibold rounded-xl hover:shadow-xl cursor-pointer ">
+          <button className="px-4 py-2 bg-black text-white text-xs rounded-xl hover:shadow-xl font-tangerine cursor-pointer ">
             Set Location
           </button>
         </div>
@@ -88,9 +88,13 @@ export default function HomePage() {
         viewport={{ once: true }}
       >
         <div className="p-1 bg-black w-full max-w-4xl rounded-lg shadow-lg">
-          <h2 className="text-2xl font-semibold mb-6 text-center">
+          <h2
+            className="text-2xl font-semibold mb-6 text-center"
+            style={{ fontFamily: '"Rye", cursive' }}
+          >
             Exclusive Deals
           </h2>
+          <p className="Tangerine text-5xl">Testing Tangerine Font Here</p>
 
           {/* Wide Carousel Container */}
           <div className="relative flex items-center justify-center w-full">
@@ -167,7 +171,10 @@ export default function HomePage() {
                 </div>
 
                 {/* Restaurant Name & Order Button */}
-                <div className="absolute bottom-4 left-6 text-white font-semibold text-2xl">
+                <div
+                  className="absolute bottom-4 left-6 text-white font-semibold text-4xl"
+                  style={{ fontFamily: '"Tangerine", cursive' }}
+                >
                   {restaurant.name}
                 </div>
               </Link>
