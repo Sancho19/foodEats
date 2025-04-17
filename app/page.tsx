@@ -69,7 +69,7 @@ export default function HomePage() {
       <HamburgerMenu />
       {/* Hero Section */}
       <motion.section
-        className="relative flex flex-col items-center justify-center text-center p-12 bg-gradient-to-b from-yellow-800 to-black text-black"
+        className="relative flex flex-col items-center justify-center text-center p-12 bg-gradient-to-b from-yellow-700 to-black text-black"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}

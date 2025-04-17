@@ -24,7 +24,7 @@ export default function Navbar() {
     console.log("User logged out");
   };
   return (
-    <nav className="bg-yellow-800 backdrop-blur-3xl shadow-sm text-white fixed top-0 left-0 w-full z-50 py-5">
+    <nav className="bg-yellow-700 backdrop-blur-3xl shadow-sm text-white fixed top-0 left-0 w-full z-50 py-5">
       <div className="container mx-auto flex justify-between items-center px-4 relative">
         {/* Hamburger Menu */}
         <button

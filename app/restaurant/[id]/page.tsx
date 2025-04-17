@@ -231,14 +231,14 @@ export default function RestaurantPage() {
             ].map((category) => (
               <button
                 key={category}
-                className="px-4 py-2 text-black rounded-full text-md font-bold bg-white cursor-pointer transition Charm"
+                className="px-4 py-2 text-black rounded-full text-md font-bold bg-yellow-700 cursor-pointer transition Charm"
               >
                 {category}
               </button>
             ))}
           </div>
         </div>
-        <h2 className="text-3xl tracking-wide font-bold text-yellow-800 mb-6 text-center Charm">
+        <h2 className="text-3xl tracking-wide font-bold text-white mb-6 text-center Charm">
           Menu
         </h2>
         <div className="grid grid-cols-1 gap-6">
