@@ -231,7 +231,7 @@ export default function RestaurantPage() {
             ].map((category) => (
               <button
                 key={category}
-                className="px-4 py-2 text-black rounded-full text-sm font-bold bg-yellow-700 cursor-pointer transition "
+                className="px-4 py-2 text-black rounded-full text-sm font-bold bg-yellow-600 cursor-pointer transition "
               >
                 {category}
               </button>
