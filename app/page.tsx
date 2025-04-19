@@ -74,7 +74,7 @@ export default function HomePage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
       >
-        <h1 className="text-5xl font-extrabold drop-shadow-lg text-white tracking-wider mb-1 ">
+        <h1 className="text-5xl font-extrabold drop-shadow-lg text-white tracking-wider mb-4 ">
           ZaiEats
         </h1>
 

@@ -27,7 +27,13 @@ export default function HamburgerMenu() {
       >
         {menuOpen ? "" : <FaBars />}
       </button>
-
+      {/* Backdrop Blur Overlay */}
+      {menuOpen && (
+        <div
+          onClick={() => setMenuOpen(false)}
+          className="fixed inset-0 z-30 bg-black/50 backdrop-blur-xs md:hidden"
+        />
+      )}
       <div
         className={`fixed z-40 top-0 bottom-0 left-0 bg-black text-white p-8 flex flex-col items-start space-y-6 md:hidden transition-transform duration-300 ${
           menuOpen ? "translate-x-0" : "-translate-x-full"
