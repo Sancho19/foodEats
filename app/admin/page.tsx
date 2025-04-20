@@ -6,6 +6,10 @@ import Footer from "@/components/footer";
 import { FaSearch, FaFilter } from "react-icons/fa";
 
 export default function AdminDashboard() {
+  const [selectedRestaurant, setSelectedRestaurant] = useState("Zai");
+
+  const restaurantTabs = ["Zai", "Bean Bag", "Pizzeria", "Zai Village"];
+
   const [orders, setOrders] = useState([
     {
       id: 1,
@@ -15,6 +19,7 @@ export default function AdminDashboard() {
       totalPrice: 170,
       deliveryMode: "Delivery",
       date: "2025-04-19",
+      restaurant: "Zai",
     },
     {
       id: 2,
@@ -24,6 +29,7 @@ export default function AdminDashboard() {
       totalPrice: 120,
       deliveryMode: "Collection",
       date: "2025-04-18",
+      restaurant: "Pizzeria",
     },
     {
       id: 3,
@@ -33,6 +39,27 @@ export default function AdminDashboard() {
       totalPrice: 350,
       deliveryMode: "Delivery",
       date: "2025-04-15",
+      restaurant: "Bean Bag",
+    },
+    {
+      id: 4,
+      user: "Sipho Mkhize",
+      status: "Pending",
+      items: [{ name: "Cheese Burger", quantity: 2, price: 175 }],
+      totalPrice: 350,
+      deliveryMode: "Delivery",
+      date: "2025-04-15",
+      restaurant: "Zai",
+    },
+    {
+      id: 5,
+      user: "Ronaldo Jabulani",
+      status: "Completed",
+      items: [{ name: "Cheese Burger", quantity: 2, price: 175 }],
+      totalPrice: 350,
+      deliveryMode: "Delivery",
+      date: "2025-04-15",
+      restaurant: "Zai",
     },
   ]);
 
@@ -43,6 +70,10 @@ export default function AdminDashboard() {
       )
     );
   };
+
+  const filteredOrders = orders.filter(
+    (order) => order.restaurant === selectedRestaurant
+  );
 
   return (
     <>
@@ -56,6 +87,23 @@ export default function AdminDashboard() {
         >
           Admin Dashboard
         </motion.h1>
+
+        {/* Tabs */}
+        <div className="flex justify-center gap-4 mb-6 flex-wrap">
+          {restaurantTabs.map((name) => (
+            <button
+              key={name}
+              onClick={() => setSelectedRestaurant(name)}
+              className={`px-3 py-2 rounded-full  shadow-neutral-300 ${
+                selectedRestaurant === name
+                  ? "bg-yellow-700 text-white border"
+                  : "bg-white text-black border-gray-300"
+              } transition`}
+            >
+              {name}
+            </button>
+          ))}
+        </div>
 
         {/* Summary Cards */}
         <div className="grid grid-cols-3 gap-4 mb-6 text-center text-white">
@@ -100,92 +148,95 @@ export default function AdminDashboard() {
           </div>
         </div>
 
-        {/* Order Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {orders.map((order) => (
-            <motion.div
-              key={order.id}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="rounded-xl shadow-md shadow-gray-500 text-white p-5 flex flex-col space-y-4"
-            >
-              {/* Top: User + Status */}
-              <div className="flex justify-between items-center">
-                <p className="text-lg font-semibold">{order.user}</p>
-                <div className="flex items-center gap-2">
-                  <span
-                    className={`h-3 w-3 rounded-full inline-block ${
-                      order.status === "Pending"
-                        ? "bg-yellow-500"
-                        : order.status === "Completed"
-                        ? "bg-green-500"
-                        : "bg-red-500"
-                    }`}
-                  />
-                  <span
-                    className={`px-3 py-1 rounded-full text-xs text-white ${
-                      order.status === "Pending"
-                        ? "bg-yellow-600"
-                        : order.status === "Completed"
-                        ? "bg-green-700"
-                        : "bg-red-500"
-                    }`}
-                  >
-                    {order.status}
-                  </span>
+        {/* Order Cards or No Orders Message */}
+        {filteredOrders.length > 0 ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredOrders.map((order) => (
+              <motion.div
+                key={order.id}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="rounded-xl shadow-md shadow-gray-500 text-white p-5 flex flex-col space-y-4"
+              >
+                {/* Top: User + Status */}
+                <div className="flex justify-between items-center">
+                  <p className="text-lg font-semibold">{order.user}</p>
+                  <div className="flex items-center gap-2">
+                    <span
+                      className={`h-3 w-3 rounded-full inline-block ${
+                        order.status === "Pending"
+                          ? "bg-yellow-500"
+                          : order.status === "Completed"
+                          ? "bg-green-500"
+                          : "bg-red-500"
+                      }`}
+                    />
+                    <span
+                      className={`px-3 py-1 rounded-full text-xs text-white ${
+                        order.status === "Pending"
+                          ? "bg-yellow-600"
+                          : order.status === "Completed"
+                          ? "bg-green-700"
+                          : "bg-red-500"
+                      }`}
+                    >
+                      {order.status}
+                    </span>
+                  </div>
                 </div>
-              </div>
 
-              {/* Price */}
-              <div className="text-sm text-gray-300">
-                <p className="font-medium">Total Price:</p>
-                <p>R {order.totalPrice}</p>
-              </div>
+                {/* Price */}
+                <div className="text-sm text-gray-300">
+                  <p className="font-medium">Total Price:</p>
+                  <p>R {order.totalPrice}</p>
+                </div>
 
-              {/* Delivery */}
-              <div className="text-sm text-gray-300">
-                <p className="font-medium">Delivery Mode:</p>
-                <p>{order.deliveryMode}</p>
-              </div>
+                {/* Delivery */}
+                <div className="text-sm text-gray-300">
+                  <p className="font-medium">Delivery Mode:</p>
+                  <p>{order.deliveryMode}</p>
+                </div>
 
-              {/* Date */}
-              <div className="text-sm text-gray-300">
-                <p className="font-medium">Date:</p>
-                <p>{order.date}</p>
-              </div>
+                {/* Date */}
+                <div className="text-sm text-gray-300">
+                  <p className="font-medium">Date:</p>
+                  <p>{order.date}</p>
+                </div>
 
-              {/* Items */}
-              <div className="text-sm text-gray-300">
-                <p className="font-medium mb-1">Items:</p>
-                <ul className="list-disc ml-4 space-y-1">
-                  {order.items.map((item, i) => (
-                    <li key={i}>
-                      {item.quantity} x {item.name} (R {item.price})
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                {/* Items */}
+                <div className="text-sm text-gray-300">
+                  <p className="font-medium mb-1">Items:</p>
+                  <ul className="list-disc ml-4 space-y-1">
+                    {order.items.map((item, i) => (
+                      <li key={i}>
+                        {item.quantity} x {item.name} (R {item.price})
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-              {/* Action Button */}
-              <div className="mt-auto">
-                {order.status !== "Completed" && (
-                  <button
-                    onClick={() => handleStatusUpdate(order.id, "Completed")}
-                    className="w-full py-2 bg-green-700 text-white rounded-md font-semibold mt-2"
-                  >
-                    Mark as Completed
-                  </button>
-                )}
-              </div>
-            </motion.div>
-          ))}
-        </div>
+                {/* Action Button */}
+                <div className="mt-auto">
+                  {order.status !== "Completed" && (
+                    <button
+                      onClick={() => handleStatusUpdate(order.id, "Completed")}
+                      className="w-full py-2 bg-green-700 text-white rounded-md font-semibold mt-2"
+                    >
+                      Mark as Completed
+                    </button>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        ) : (
+          <div className="text-center text-gray-400 py-12">
+            <p className="text-lg font-semibold">
+              No orders for {selectedRestaurant} at the moment
+            </p>
+          </div>
+        )}
       </div>
-
-      {/* Floating Action Button (FAB) */}
-      <button className="fixed bottom-5 right-5 bg-blue-600 text-white text-2xl rounded-full p-4 shadow-lg">
-        +
-      </button>
 
       <Footer />
     </>
