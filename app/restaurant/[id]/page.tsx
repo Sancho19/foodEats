@@ -34,53 +34,45 @@ const restaurants: Restaurant[] = [
     menu: [
       {
         id: "101",
-        name: "Cheese Burger",
-        price: "R50",
+        name: "Zai Breakfast",
+        price: "R85",
         description:
-          "2 Chicken Breasts, lettuce, a slice of cheese, middle bun, 3 pickles and Dreamy Creamy sauce on a toasted sesame bun. Includes a regular Soul Fries and a 300ml cold drink",
-        image: "/deal2.jpg",
+          "2 eggs any style, streaky bacon, mushrooms, tomato and toast",
+        image: "/breakfast.jpg",
       },
       {
         id: "102",
-        name: "English Breakfast",
-        price: "R45",
-        description:
-          "2 eggs any style, streaky bacon, mushrooms, tomato and toast",
-        image: "/english.jpg",
-      },
-      {
-        id: "103",
-        name: "Muesli",
-        price: "R45",
-        description: "Served with plain yoghurt",
-        image: "/muesli.jpg",
-      },
-      {
-        id: "104",
-        name: "SHAKSHOUKA",
-        price: "R105",
-        description:
-          "2 poached eggs in a spicy tomato sauce, beef strips, Mozzarella Cheese on Garlic & Herb ciabatta.",
-        image: "/waffle.jpg",
-      },
-      {
-        id: "105",
-        name: "Zai Benedict",
-        price: "R75",
-        description:
-          "Two poached eggs on English muffin with bacon, topped with Spicy Hollandaise sauce and rocket",
-        image: "/food3.jpg",
-      },
-      {
-        id: "106",
         name: "Fresh Fruit Salad",
         price: "R45",
         description:
           "Muesli, fresh fruits, plain yoghurt drizzled with a little honey",
-        image: "/waffle.jpg",
+        image: "/image3.jpg",
       },
       {
-        id: "107",
+        id: "103",
+        name: "Cordero",
+        price: "R245",
+        description:
+          "450g Lamb loin chops, marinated in homemade chimichurri, Served with a side of your choice.",
+        image: "/image4.jpg",
+      },
+      {
+        id: "104",
+        name: "Zai Benedict",
+        price: "R75",
+        description:
+          "Two poached eggs on English muffin with bacon, topped with Spicy Hollandaise sauce and rocket",
+        image: "/image5.jpg",
+      },
+      {
+        id: "105",
+        name: "Pescadore",
+        price: "R195",
+        description: "Creamy and spicy garlic prawns",
+        image: "/image1.jpg",
+      },
+      {
+        id: "106",
         name: "Vegeterian Empanadas",
         price: "R65",
         description:
@@ -88,26 +80,19 @@ const restaurants: Restaurant[] = [
         image: "/food3.jpg",
       },
       {
-        id: "108",
+        id: "107",
         name: "Chicken Empanadas",
         price: "R85",
         description: "Homemade pastries made with savoury chicken",
         image: "/waffle.jpg",
       },
       {
-        id: "109",
+        id: "108",
         name: "Chicken Livers",
         price: "R75",
         description:
           "Pan fried livers, on a spicy creamy sauce served with ciabatta",
         image: "/food3.jpg",
-      },
-      {
-        id: "110",
-        name: "Creamy Mussels",
-        price: "R80",
-        description: "Creamy white wine mussels served with toasted ciabatta",
-        image: "/waffle.jpg",
       },
     ],
   },
