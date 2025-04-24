@@ -79,21 +79,6 @@ const restaurants: Restaurant[] = [
           "Home-made pastries done with vegetables, red peppers, onions and mozzarella",
         image: "/food3.jpg",
       },
-      {
-        id: "107",
-        name: "Chicken Empanadas",
-        price: "R85",
-        description: "Homemade pastries made with savoury chicken",
-        image: "/waffle.jpg",
-      },
-      {
-        id: "108",
-        name: "Chicken Livers",
-        price: "R75",
-        description:
-          "Pan fried livers, on a spicy creamy sauce served with ciabatta",
-        image: "/food3.jpg",
-      },
     ],
   },
   {
