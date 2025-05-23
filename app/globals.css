@@ -1,5 +1,5 @@
 /* globals.css */
-@import url("https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Tangerine:wght@400;700&display=swap");
 
 @import "tailwindcss";
 
@@ -35,7 +35,7 @@ body {
 .scrollbar-hide {
   scrollbar-width: none;
 }
-.Tangerine {
+/* .Tangerine {
   font-family: "Tangerine", cursive !important;
 }
 .Charm {
@@ -44,3 +44,6 @@ body {
 .Rye {
   font-family: "Rye" !important;
 }
+.bo {
+  font-family: "Rye" !important;
+} */
